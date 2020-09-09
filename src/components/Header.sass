@@ -1,0 +1,28 @@
+.header
+    background-color: plum
+    text-align: center
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    &__top
+        margin: 1rem auto
+    &__body
+        width: 100%
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        margin: 0
+
+    &__element
+        min-width: 200px
+        width: 100%
+        margin: .5rem
+    
+    &__text
+        margin: .25rem
+
+@media screen and ( min-width: 450px ) 
+    .header
+        &__element
+            width: auto
