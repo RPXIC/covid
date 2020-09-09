@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
+import './App.sass'
 
 const App = () => {
   const [countries, setCountries] = useState()
