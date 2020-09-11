@@ -1,17 +1,14 @@
 import React from 'react'
-import useSummary from 'hooks/useSummary'
 import './Header.sass'
 
-//https://www.countryflags.io/be/flat/64.png - flags API
-
-const Header = () => {
-    const { loading, global, countries, date } = useSummary()
+const Header = ({ loading, global, date }) => {
 
     if (loading) return <div className="App">loading...</div>
 
     return (
         <header className="header">
             <div className="header__top">Latest update: {date}</div>
+            <h1>world cases</h1>
             <div className="header__body">
                 <div className="header__element"><p className="header__text">New confirmed: {global.NewConfirmed}</p></div>
                 <div className="header__element"><p className="header__text">New deaths: {global.NewDeaths}</p></div>
