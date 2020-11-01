@@ -4,4 +4,5 @@ const getSummary = async () => {
 
     return response
 }
+
 export default getSummary

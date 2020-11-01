@@ -1,11 +1,11 @@
 import React from 'react'
-import CountryCard from 'components/CountryCard'
+import { CountryCard } from 'components'
 import './Body.sass'
 
 const Body = ({ countries }) => {
 
     return (
-        <div className="container">
+        <main className="main">
             {countries.map(({ Country, CountryCode, NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered }) =>
                 <CountryCard
                     Country={Country}
@@ -19,7 +19,8 @@ const Body = ({ countries }) => {
                     TotalRecovered={TotalRecovered}
                 />
             )}
-        </div>
+        </main>
     )
 }
+
 export default Body

@@ -1,18 +1,16 @@
 import React from 'react'
-import Header from 'components/Header'
-import Body from 'components/Body'
+import { Header, Body, Loader} from 'components'
 import useSummary from 'hooks/useSummary'
-import 'App.sass'
+import dateParser from 'utils/dateParser'
 
 const App = () => {
   const { loading, global, countries, date } = useSummary()
-  console.log(countries)
 
-  if (loading) return <div className="App">loading...</div>
+  if (loading) return <Loader />
 
   return (
     <>
-      <Header loading={loading} global={global} date={date} />
+      <Header loading={loading} global={global} date={dateParser(date)} />
       <Body countries={countries} />
     </>
   )

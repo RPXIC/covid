@@ -8,7 +8,7 @@ const Header = ({ loading, global, date }) => {
     return (
         <header className="header">
             <div className="header__top">Latest update: {date}</div>
-            <h1>world cases</h1>
+            <h1 className="header__title">world cases</h1>
             <div className="header__body">
                 <div className="header__element"><p className="header__text">New confirmed: {global.NewConfirmed}</p></div>
                 <div className="header__element"><p className="header__text">New deaths: {global.NewDeaths}</p></div>
