@@ -20,4 +20,5 @@ const useSummary = () => {
 
     return { loading, countries, global, date }
 }
+
 export default useSummary
