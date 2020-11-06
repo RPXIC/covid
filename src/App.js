@@ -1,19 +1,14 @@
 import React from 'react'
-import { Header, Body, Loader} from 'components'
-import useSummary from 'hooks/useSummary'
-import dateParser from 'utils/dateParser'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Home, Country } from 'pages'
 
-const App = () => {
-  const { loading, global, countries, date } = useSummary()
-
-  if (loading) return <Loader />
-
-  return (
-    <>
-      <Header loading={loading} global={global} date={dateParser(date)} />
-      <Body countries={countries} />
-    </>
-  )
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/:Country" component={Country} />
+    </Switch>
+  </Router>
+)
 
 export default App
