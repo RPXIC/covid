@@ -1,11 +1,12 @@
 import React from 'react'
 import './CountryCard.sass'
+import { Link } from 'react-router-dom'
 
 const CountryCard = ({ Country, CountryCode, NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered }) => {
 
     return (
         <div className="card">
-            <div className="title">{Country.toUpperCase()}</div>
+            <Link to={`/${Country.toLowerCase()}`} className="title">{Country.toUpperCase()}</Link>
             <img src={`https://www.countryflags.io/${CountryCode.toLowerCase()}/shiny/64.png`} alt="flag" className="image" />
             <div className="middle">
                 <div className="text">New confirmed: {NewConfirmed}</div>
