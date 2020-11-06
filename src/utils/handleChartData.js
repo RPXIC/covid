@@ -1,3 +1,4 @@
+import dateParser from 'utils/dateParser'
 
 const handleChartData = ( chartData, Country ) => {
     let actives = []
@@ -6,7 +7,7 @@ const handleChartData = ( chartData, Country ) => {
     if (chartData) {
         chartData.forEach(day => {
             actives.push(day.Active)
-            days.push(day.Date)
+            days.push(dateParser(day.Date))
         })
     }
     
