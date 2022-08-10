@@ -1,14 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import 'index.css'
+import { createRoot } from 'react-dom/client'
 import App from 'App'
+import 'index.css'
 import * as serviceWorker from 'serviceWorker'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+const container = document.getElementById('app')
+const root = createRoot(container)
+root.render(<App />)
 
 serviceWorker.unregister()

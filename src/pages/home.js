@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Header, Body, Loader } from 'components'
 import useSummary from 'hooks/useSummary'
 import dateParser from 'utils/dateParser'
@@ -11,12 +11,7 @@ const Home = () => {
 
   return (
     <>
-      <Header
-        loading={loading}
-        global={global}
-        date={dateParser(date)}
-        setFilter={setFilter}
-      />
+      <Header loading={loading} global={global} date={dateParser(date)} setFilter={setFilter} />
       <Body countries={countries} filter={filter} />
     </>
   )

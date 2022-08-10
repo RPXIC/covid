@@ -1,4 +1,3 @@
-import React from 'react'
 import Searcher from './Searcher'
 import './Header.sass'
 
@@ -20,17 +19,13 @@ const Header = ({ loading, global, date, setFilter }) => {
           <p className='header__text'>New recovered: {global.NewRecovered}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>
-            Total confirmed: {global.TotalConfirmed}
-          </p>
+          <p className='header__text'>Total confirmed: {global.TotalConfirmed}</p>
         </div>
         <div className='header__element'>
           <p className='header__text'>Total Deaths: {global.TotalDeaths}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>
-            Total recovered: {global.TotalRecovered}
-          </p>
+          <p className='header__text'>Total recovered: {global.TotalRecovered}</p>
         </div>
       </div>
       <Searcher setFilter={setFilter} />
