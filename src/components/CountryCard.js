@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
+import { Flag } from './Flag'
 import './CountryCard.sass'
 
 const CountryCard = ({ Country, CountryCode, NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered }) => (
-  <div className='card'>
-    <Link to={`/${Country.toLowerCase()}`} className='title'>
-      {Country.toUpperCase()}
-    </Link>
-    <img src={`https://countryflagsapi.com/png/${CountryCode.toLowerCase()}`} alt='flag' className='image' />
+  <Link to={`/${Country.toLowerCase()}`} className='card'>
+    <h2 className='title'>{Country.toUpperCase()}</h2>
+    <Flag flag={CountryCode.toLowerCase()} />
     <div className='middle'>
       <div className='text'>New confirmed: {NewConfirmed}</div>
       <div className='text'>NewDeaths: {NewDeaths}</div>
@@ -15,7 +14,7 @@ const CountryCard = ({ Country, CountryCode, NewConfirmed, NewDeaths, NewRecover
       <div className='text'>TotalDeaths: {TotalDeaths}</div>
       <div className='text'>TotalRecovered: {TotalRecovered}</div>
     </div>
-  </div>
+  </Link>
 )
 
 export default CountryCard

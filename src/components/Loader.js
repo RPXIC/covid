@@ -2,7 +2,7 @@ const Loader = (props) => (
   <svg
     style={{
       margin: '3rem auto',
-      background: '#fff'
+      background: 'transparent'
     }}
     width={200}
     height={200}
