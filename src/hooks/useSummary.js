@@ -6,19 +6,21 @@ const useSummary = () => {
   const [countries, setCountries] = useState()
   const [global, setGlobal] = useState()
   const [date, setDate] = useState()
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     ;(async () => {
       const result = await getSummary()
-      const { Global, Countries, Date } = result
+      const { Global, Countries, Date, Message } = result
       setGlobal(Global)
       setCountries(Countries)
       setDate(Date)
       setLoading(false)
+      setMessage(Message)
     })()
   }, [])
 
-  return { loading, countries, global, date }
+  return { loading, countries, global, date, message }
 }
 
 export default useSummary
