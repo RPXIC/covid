@@ -1,31 +1,32 @@
 import Searcher from './Searcher'
+import dateParser from 'utils/dateParser'
 import './Header.sass'
 
-const Header = ({ loading, global, date, setFilter }) => {
-  if (loading) return <div className='App'>loading...</div>
+const Header = ({ summary, setFilter }) => {
+  const { last_update, confirmed, deaths, recovered, recovered_diff, confirmed_diff, deaths_diff } = summary
 
   return (
     <header className='header'>
-      <div className='header__top'>Latest update: {date}</div>
+      <div className='header__top'>Latest update: {dateParser(last_update)}</div>
       <h1 className='header__title'>world cases</h1>
       <div className='header__body'>
         <div className='header__element'>
-          <p className='header__text'>New confirmed: {global.NewConfirmed}</p>
+          <p className='header__text'>New confirmed: {confirmed_diff}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>New deaths: {global.NewDeaths}</p>
+          <p className='header__text'>New deaths: {deaths_diff}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>New recovered: {global.NewRecovered}</p>
+          <p className='header__text'>New recovered: {recovered_diff}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>Total confirmed: {global.TotalConfirmed}</p>
+          <p className='header__text'>Total confirmed: {confirmed}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>Total Deaths: {global.TotalDeaths}</p>
+          <p className='header__text'>Total Deaths: {deaths}</p>
         </div>
         <div className='header__element'>
-          <p className='header__text'>Total recovered: {global.TotalRecovered}</p>
+          <p className='header__text'>Total recovered: {recovered}</p>
         </div>
       </div>
       <Searcher setFilter={setFilter} />

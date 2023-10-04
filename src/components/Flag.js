@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import './Flag.sass'
 import Loader from './Loader'
+import './Flag.sass'
 
 export const Flag = ({ flag }) => {
   let [icon, setIcon] = useState('')
@@ -8,7 +8,7 @@ export const Flag = ({ flag }) => {
   useEffect(() => {
     ;(async () => {
       try {
-        let importedIcon = await import(`../assets/flags/${flag}.svg`)
+        let importedIcon = await import(`../assets/flags/${flag.toLowerCase()}.svg`)
         setIcon(importedIcon.default)
       } catch (error) {
         console.log(error)

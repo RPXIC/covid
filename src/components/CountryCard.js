@@ -1,20 +1,18 @@
-import { Link } from 'react-router-dom'
 import { Flag } from './Flag'
 import './CountryCard.sass'
 
-const CountryCard = ({ Country, CountryCode, NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered }) => (
-  <Link to={`/${Country.toLowerCase()}`} className='card'>
+const CountryCard = ({ Country, CountryCode, newData }) => (
+  <div className='card'>
     <h2 className='title'>{Country.toUpperCase()}</h2>
-    <Flag flag={CountryCode.toLowerCase()} />
+    <Flag flag={CountryCode} />
     <div className='middle'>
-      <div className='text'>New confirmed: {NewConfirmed}</div>
-      <div className='text'>NewDeaths: {NewDeaths}</div>
-      <div className='text'>NewRecovered: {NewRecovered}</div>
-      <div className='text'>TotalConfirmed: {TotalConfirmed}</div>
-      <div className='text'>TotalDeaths: {TotalDeaths}</div>
-      <div className='text'>TotalRecovered: {TotalRecovered}</div>
+      <div className='text'>New confirmed: {newData?.new_cases}</div>
+      <div className='text'>NewDeaths: {newData?.new_deaths}</div>
+      <div className='text'>TotalConfirmed: {newData?.total_cases}</div>
+      <div className='text'>TotalDeaths: {newData?.total_deaths}</div>
+      <div className='text'>TotalRecovered: {newData?.total_recovered}</div>
     </div>
-  </Link>
+  </div>
 )
 
 export default CountryCard
